@@ -17,7 +17,7 @@
     "currency"
   ],
   "author": "Conny Brunnkvist <cbrunnkvist@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^3.7.1",
     "eslint-config-airbnb": "^12.0.0",
