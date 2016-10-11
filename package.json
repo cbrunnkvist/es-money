@@ -2,7 +2,7 @@
   "name": "es-money",
   "version": "1.0.0",
   "description": "A value object for monetary amounts with currency (EcmaScript 6 implementation)",
-  "main": "es-money.js",
+  "main": "lib/money.js",
   "scripts": {
     "lint": "eslint .",
     "test": "mocha"
@@ -30,7 +30,8 @@
     },
     "extends": "airbnb/base",
     "rules": {
-      "semi": "off"
+      "semi": "off",
+      "no-underscore-dangle": ["error", { "allowAfterThis": true }]
     }
   }
 }

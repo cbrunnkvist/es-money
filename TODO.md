@@ -1,0 +1,3 @@
+- Assign data to default currency registry
+- Allow JSON de-/serialization
+- Make implementation internals less visible
