@@ -1,2 +1,1 @@
 - Allow JSON de-/serialization
-- Make implementation internals less visible
