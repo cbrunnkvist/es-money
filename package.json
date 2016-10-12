@@ -2,7 +2,7 @@
   "name": "es-money",
   "version": "1.0.0",
   "description": "A value object for monetary amounts with currency (EcmaScript 6 implementation)",
-  "main": "lib/money.js",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint .",
     "test": "mocha"

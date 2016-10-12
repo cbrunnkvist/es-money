@@ -1,5 +1,5 @@
 const assert = require('assert')
-const Money = require('../lib/money.js')
+const Money = require('../')
 
 /* eslint-disable no-new */
 describe('Money constructor', () => {
