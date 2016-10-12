@@ -1,1 +1,1 @@
-- Allow JSON de-/serialization
+- Bring README up to shape
