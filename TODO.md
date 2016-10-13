@@ -1,1 +1,1 @@
-- Bring README up to shape
+- Add a .toString()? .toObject()?
