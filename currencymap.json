@@ -370,5 +370,8 @@
    },
    "SAR" : {
       "decimal_digits" : 2
+   },
+   "XBT" : {
+      "decimal_digits" : 8
    }
 }
