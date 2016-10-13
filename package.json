@@ -1,6 +1,6 @@
 {
   "name": "es-money",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A value object class for dealing with money and currencies (ECMAScript>5 implementation)",
   "main": "index.js",
   "scripts": {
