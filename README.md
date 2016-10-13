@@ -69,4 +69,4 @@ The module was written targeting contemporary Node.js environments. There is no 
 The included currency registry is based on data published by the LocalePlanet project: http://www.localeplanet.com/
 
 # License
-Copyright (c) 2016 Conny Brunnkvist. Licensed under the [MIT License](./LICENSE))
+Copyright (c) 2016 Conny Brunnkvist. Licensed under the [MIT License](./LICENSE)

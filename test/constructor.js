@@ -17,10 +17,12 @@ describe('Money constructor', () => {
       1,
       1.1,
       1.11,
+      1.11111111,
+      -1.11111111,
     ].forEach((validAmount) => {
       assert.doesNotThrow(
         () => {
-          new Money('USD', validAmount)
+          new Money('XBT', validAmount)
         },
         `validAmount=${validAmount}`
       )
