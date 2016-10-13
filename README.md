@@ -9,17 +9,32 @@ const oneDollar = new Money('USD', 1) // Money {currency: 'USD', amount: '1.00'}
 
 ## Additional examples
 ```js
-// common arithmetic operations
-oneDollar.add(oneDollar) // -> Money { currency: 'USD', amount: '1.00' }
-oneDollar.subtract(oneDollar) // -> Money { currency: 'USD', amount: '0.00' }
-oneDollar.multiply(1.1) // -> Money { currency: 'USD', amount: '1.10' }
+oneDollar.add(oneDollar)
+// -> Money { currency: 'USD', amount: '1.00' }
 
-// allocating new funds from one amount (split by ratio)
-oneDollar.allocate([1, 1]) // -> [Money { currency: 'USD', amount: '0.50' }, Money { currency: 'USD', amount: '0.50' }]
+oneDollar.subtract(oneDollar)
+// -> Money { currency: 'USD', amount: '0.00' }
 
-// (de-)serialization
+oneDollar.multiply(1.1)
+// -> Money { currency: 'USD', amount: '1.10' }
+
+oneDollar.allocate([75, 25])
+// -> [Money { currency: 'USD', amount: '0.75' }, Money { currency: 'USD', amount: '0.25' }]
+
+oneHundredDollars.allocate([1, 1, 1])
+// -> [Money { currency: 'USD', amount: '33.34' }, Money { currency: 'USD', amount: '33.33' }, Money { currency: 'USD', amount: '33.33' }]
+
 JSON.stringify(oneDollar) // -> '{"currency":"USD","amount":"1.00"}'
 Money.fromObject({currency:'VND', amount:'1234'}) // -> Money { currency: 'VND', amount: '1234' }
+```
+
+## Custom exception types
+Inherits from `Error`:
+```js
+Money.CurrencyMismatchError // Can't add apples to oranges
+Money.CurrencyUnknownError // Currency code not registered
+Money.SubunitError // Can't create fractional cents
+Money.AmountError // Passed amount doesn't look like a number
 ```
 
 ## Registering / modifying currencies
@@ -33,6 +48,7 @@ new Money('XYZ', 3.14) // ... and so on
 - Keep feature set and module interface minimal _(a value object should be just a value object)_
 - Store amounts internally in integer subunit form _(and avoid implementation leak)_
 - Present amounts in string form _(to avoid precision ambiguities)_
+- Fail / throw exceptions early _(to avoid mistakes from proliferating)_
 - Use accessors for immutable properties _(to allow exceptions even if the calling code forgot to `'use strict'` itself)_
 - Don't deal in currency-specific rounding rules _(they are likely application-specific anyway, and often complex enough to be the concern of a separate component)_
 - Don't deal with localization of currency names _(or currency symbols, or other presentation-level stuff)_
@@ -46,5 +62,11 @@ Aside from the risk of mistakenly adding or subtracting values in differing curr
 ## Module name
 The `es-` prefix might be an abbreviation of _ECMAScript_ or _e(a)s(y)-_.
 
+# Caveats
+The module was written targeting contemporary Node.js environments. There is no transpiler hooked in (patches welcome) thus it will likely _not_ run in all browser environments.
+
 # Acknowledgements
 The included currency registry is based on data published by the LocalePlanet project: http://www.localeplanet.com/
+
+# License
+Copyright (c) 2016 Conny Brunnkvist. Licensed under the [MIT License](./LICENSE))
