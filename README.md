@@ -1,6 +1,8 @@
 # es-money
 A value object class for dealing with money and currencies
 
+[![Build Status](https://travis-ci.org/cbrunnkvist/es-money.svg?branch=master)](https://travis-ci.org/cbrunnkvist/es-money)
+
 # Basic usage
 ```js
 const Money = require('es-money')
