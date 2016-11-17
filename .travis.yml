@@ -1,7 +1,15 @@
-language: "node_js"
+language: node_js
 node_js:
-  - "4.6"
-  - "6"
+- '4.6'
+- '6'
 cache:
   directories:
   - node_modules
+deploy:
+  provider: npm
+  email: cbrunnkvist@gmail.com
+  api_key:
+    secure: m2QuY/du5BW/HJly6Iv0Of6cfImYsDUb/sY5lZuUG21K6m7DwFI0nkrPo4B0fgApWphDq1cTUeTK22Ypy8wDJj1fXOQF9coEU4A+wrIdBSiPGvZZ2lX5y9Zo0rc18AzMwXRDgP02dB4vPT5R6TjqqB7G8Zregr2L4L9lDP3IFoFPIzMLixy2FksH91ywLFqkxX8MlnCWWmmk8AAmFL5NTZWaN25BZa+5jUEgI1eK7Fzz9LWK7pebLimtW84jFpvUBrTXT3rFTUk0nBpKQyd82KNFnpMdyr2iZ/yEd33G7wRaKmYS6uxXe+LGx5oI/+ov4EBwkEShKN2SopcAYJGcGYWzrLEtHd0/WVfLRxEhuq3fJpOtEGQaoc4pq7EOFeEcYnqCjLu0ZXXklca6qHPDEd2gzuUntCXF/R6EDf09ASGK9GPfq8Ck0y7+wPW7kYamNCt0sjDmUrZmfnCOlj/qOj5aRib3LQLhJyqq83PNy+srxHBNkgRH9Cah7jlBILkwvZjeag0xnCy6E/EQjiuQBWfiT+MDRCCMPXxAl8ckPMX+hWqUEN0S8wEI/JDnUyPIEcCieHR3udFChub+w/9Cphq6wNPVaRTg+Avnef1IO/9tEwBRflGp3B/QBzLSgIT/jzsJs6VQ6CkTyo2+nnwOYN8bfRu6mALbC4wpy90x1+g=
+  on:
+    tags: true
+    repo: cbrunnkvist/es-money
