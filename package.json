@@ -1,11 +1,12 @@
 {
   "name": "es-money",
   "version": "1.0.2",
-  "description": "A value object class for dealing with money and currencies (ECMAScript>5 implementation)",
-  "main": "index.js",
+  "description": "A value object class for dealing with money and currencies",
+  "main": "dist/index.js",
   "scripts": {
-    "lint": "eslint .",
-    "test": "mocha"
+    "dist": "babel src --out-dir dist --presets es2015",
+    "lint": "eslint src",
+    "test": "mocha dist/test"
   },
   "repository": {
     "type": "git",
