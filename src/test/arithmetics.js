@@ -2,13 +2,11 @@ const assert = require('assert')
 const Money = require('../')
 
 describe('Arithmetic operations', () => {
-  before(() => {
-    this.oneUSD = new Money('USD', 1)
-  })
+  const oneUSD = new Money('USD', 1)
 
   context('addition', () => {
     it('works when currency matches', () => {
-      const sum = this.oneUSD.add(this.oneUSD)
+      const sum = oneUSD.add(oneUSD)
       assert.equal(sum.currency, 'USD')
       assert.equal(sum.amount, 2)
     })
@@ -22,16 +20,16 @@ describe('Arithmetic operations', () => {
     it('fails when the currencies differ', () => {
       assert.throws(
         () => {
-          this.oneUSD.add(new Money('THB', 1))
+          oneUSD.add(new Money('THB', 1))
         },
-        Money.CurrencyMismatchError
+        /CurrencyMismatchError/
       )
     })
   })
 
   context('subtraction', () => {
     it('can subtract values', () => {
-      const difference = this.oneUSD.subtract(this.oneUSD)
+      const difference = oneUSD.subtract(oneUSD)
       assert.equal(difference.currency, 'USD')
       assert.equal(difference.amount, 0)
     })
@@ -45,16 +43,16 @@ describe('Arithmetic operations', () => {
     it('fails when the currencies differ', () => {
       assert.throws(
         () => {
-          this.oneUSD.subtract(new Money('THB', 1))
+          oneUSD.subtract(new Money('THB', 1))
         },
-        Money.CurrencyMismatchError
+        /CurrencyMismatchError/
       )
     })
   })
 
   context('multiplication', () => {
     it('can multiply values', () => {
-      const product = this.oneUSD.multiply(1.5)
+      const product = oneUSD.multiply(1.5)
       assert.equal(product.currency, 'USD')
       assert.equal(product.amount, 1.5)
     })
@@ -66,8 +64,8 @@ describe('Arithmetic operations', () => {
     })
 
     it('fails if factor is not a number', () => {
-      assert.throws(() => { this.oneUSD.multiply(this.oneUSD) }, TypeError)
-      assert.throws(() => { this.oneUSD.multiply(null) }, TypeError)
+      assert.throws(() => { oneUSD.multiply(oneUSD) }, /TypeError/)
+      assert.throws(() => { oneUSD.multiply(null) }, /TypeError/)
     })
   })
 

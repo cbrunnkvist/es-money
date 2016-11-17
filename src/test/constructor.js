@@ -8,7 +8,7 @@ describe('Money constructor', () => {
       () => {
         new Money('OMG', 0)
       },
-      Money.CurrencyUnknownError
+      /CurrencyUnknownError/
     )
   })
 
@@ -38,7 +38,7 @@ describe('Money constructor', () => {
         () => {
           new Money('USD', invalidAmount)
         },
-        Money.SubunitError,
+        /SubunitError/,
         `invalidAmount=${invalidAmount}`
       )
     })
@@ -58,7 +58,7 @@ describe('Money constructor', () => {
         () => {
           new Money('USD', invalidAmount)
         },
-        Money.AmountError,
+        /AmountError/,
         `invalidAmount=${invalidAmount}`
       )
     })

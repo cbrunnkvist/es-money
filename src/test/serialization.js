@@ -2,17 +2,15 @@ const assert = require('assert')
 const Money = require('../')
 
 describe('JSON interface', () => {
-  before(() => {
-    this.object = new Money('USD', 1)
-    this.string = '{"currency":"USD","amount":"1.00"}'
-  })
+  const asObject = new Money('USD', 1)
+  const asString = '{"currency":"USD","amount":"1.00"}'
 
   it('can serialize from Money object', () => {
-    assert.equal(JSON.stringify(this.object), this.string)
+    assert.equal(JSON.stringify(asObject), asString)
   })
 
   it('can deserialize into Money object', () => {
-    const other = Money.fromObject(JSON.parse(this.string))
-    assert(this.object.equalTo(other))
+    const other = Money.fromObject(JSON.parse(asString))
+    assert(asObject.equalTo(other))
   })
 })
