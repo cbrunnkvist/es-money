@@ -1,5 +1,5 @@
 # es-money
-A value object class for dealing with money and currencies (ECMAScript>5 implementation)
+A value object class for dealing with money and currencies
 
 # Basic usage
 ```js
@@ -63,7 +63,7 @@ Aside from the risk of mistakenly adding or subtracting values in differing curr
 The `es-` prefix might be an abbreviation of _ECMAScript_ or _e(a)s(y)-_.
 
 # Caveats
-The module was written targeting contemporary Node.js environments. There is no transpiler hooked in (patches welcome) thus it will likely _not_ run in all browser environments.
+This module was written with transpilation for some feasible level of backwards compatibility, but will still probably not run on any Node.js version older than 4.6
 
 # Acknowledgements
 The included currency registry is based on data published by the LocalePlanet project: http://www.localeplanet.com/
